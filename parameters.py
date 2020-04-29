@@ -1,9 +1,10 @@
-class parameters:
+class Parameters(object):
 	'''
-	Two start parameters ar set, 
-	they can be acquired in many ways but, 
-	let's initiate them in this class.
+	Parameters class for creating and getting created parameters
 	'''
-	First = 65
-	Second = 8921
-	print("Parameters loaded.")
+	def __init__(self, value):
+		self.value = value
+
+	def getParameter(self):
+		return(self.value)
+
