@@ -2,7 +2,7 @@
 import re
 from parameters import Parameters
 from generators import *
-import compare_params
+from compare_params import *
 
 
 
@@ -27,8 +27,7 @@ def main():
 		First = Parameters(generator_A(Parameters.getParameter(First))) # generators create new values in generators.py and these values replace old values
 		Second = Parameters(generator_B(Parameters.getParameter(Second)))
 		
-		if compare_params.compare('{:032b}'.format(Parameters.getParameter(First)), #Converting new generated values into 32 bit binary and comparing them in compare_params.py
-			'{:032b}'.format(Parameters.getParameter(Second))):
+		if compare_A(Parameters.getParameter(First), Parameters.getParameter(Second)): #comparing them in method from compare_params.py
 			count = count + 1 #Method returns True if strings match, else returns False.
 
 	
